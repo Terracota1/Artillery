@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638286997295837409
-    m_Hash: 1599151731
+      ticks: 638287013691358577
+    m_Hash: 3342252519
   m_LockFileStatus:
     m_FilePath: C:/Users/gianl/OneDrive/Escritorio/Unity/Artillery/ARTILLERY/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638286997295901256
-    m_Hash: 4145952755
+      ticks: 638287013691368893
+    m_Hash: 3607772780
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
