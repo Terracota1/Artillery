@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
-    public AdministradorJuego administradorJuego;
     [SerializeField] private GameObject BalaPrefab;
     private GameObject puntaCanon;
     private float rotacion;
@@ -16,7 +15,7 @@ public class Canon : MonoBehaviour
 
     void Update()
     {
-        rotacion += Input.GetAxis("Horizontal") * AdministradorJuego.VelocidadRotacion;
+        rotacion += Input.GetAxis("Horizontal") * AdministradorJuego.SingletonAdministradorJuego._VelocidadRotacion_Get;
         if (rotacion <= 90 && rotacion >= 0)
         {
             transform.eulerAngles = new Vector3(rotacion, 90, 0.0f);
@@ -25,14 +24,14 @@ public class Canon : MonoBehaviour
         if (rotacion > 90) rotacion = 90;
         if (rotacion < 0) rotacion = 0;
 
-        if (Input.GetKeyDown(KeyCode.Space) && administradorJuego.GetDisparosRestantes() > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && AdministradorJuego.SingletonAdministradorJuego._DisparosRestantes_Get > 0)
         {
             GameObject temp = Instantiate(BalaPrefab, puntaCanon.transform.position, transform.rotation);
             Rigidbody tempRB = temp.GetComponent<Rigidbody>();
             Vector3 direccionDisparo = transform.rotation.eulerAngles;
             direccionDisparo.y = 90 - direccionDisparo.x;
-            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.VelocidadBala;
-            administradorJuego.DisparosRestantes--;
+            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadRotacion_Get;
+            AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
         }
     }
 }
