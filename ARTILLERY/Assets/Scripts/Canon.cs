@@ -30,7 +30,7 @@ public class Canon : MonoBehaviour
             Rigidbody tempRB = temp.GetComponent<Rigidbody>();
             Vector3 direccionDisparo = transform.rotation.eulerAngles;
             direccionDisparo.y = 90 - direccionDisparo.x;
-            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadRotacion_Get;
+            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
             AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
         }
     }
