@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
+    public static bool Bloqueado;
     [SerializeField] private GameObject BalaPrefab;
     private GameObject puntaCanon;
     private float rotacion;
@@ -26,12 +27,17 @@ public class Canon : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && AdministradorJuego.SingletonAdministradorJuego._DisparosRestantes_Get > 0)
         {
-            GameObject temp = Instantiate(BalaPrefab, puntaCanon.transform.position, transform.rotation);
-            Rigidbody tempRB = temp.GetComponent<Rigidbody>();
-            Vector3 direccionDisparo = transform.rotation.eulerAngles;
-            direccionDisparo.y = 90 - direccionDisparo.x;
-            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
-            AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
+            if (Input.GetKeyDown(KeyCode.Space) && !Bloqueado)
+            {
+                GameObject temp = Instantiate(BalaPrefab, puntaCanon.transform.position, transform.rotation);
+                Rigidbody tempRB = temp.GetComponent<Rigidbody>();
+                SeguirCamara.objetivo = temp;
+                Vector3 direccionDisparo = transform.rotation.eulerAngles;
+                direccionDisparo.y = 90 - direccionDisparo.x;
+                tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
+                AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
+                Bloqueado = true;
+            }
         }
     }
 }
