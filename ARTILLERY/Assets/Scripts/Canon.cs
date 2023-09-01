@@ -6,6 +6,7 @@ public class Canon : MonoBehaviour
 {
     public static bool Bloqueado;
     [SerializeField] private GameObject BalaPrefab;
+    public GameObject ParticulasDisparo;
     private GameObject puntaCanon;
     private float rotacion;
 
@@ -34,6 +35,8 @@ public class Canon : MonoBehaviour
                 SeguirCamara.objetivo = temp;
                 Vector3 direccionDisparo = transform.rotation.eulerAngles;
                 direccionDisparo.y = 90 - direccionDisparo.x;
+                Vector3 direccionParticulas = new Vector3(-90 + direccionDisparo.x, 90, 0);
+                GameObject Particulas = Instantiate(ParticulasDisparo, puntaCanon.transform.position, transform.rotation);
                 tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
                 AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
                 Bloqueado = true;
