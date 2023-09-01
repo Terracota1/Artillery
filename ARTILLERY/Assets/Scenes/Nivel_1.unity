@@ -6546,6 +6546,63 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &214141710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.02195
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.14503
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2650873
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790047623947981596, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980686280593968266, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
+      propertyPath: m_Name
+      value: SonidoDisparo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e75aa37d56738f44a511b782736a988, type: 3}
 --- !u!43 &222692483
 Mesh:
   m_ObjectHideFlags: 0
@@ -77172,6 +77229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanonJugador
       objectReference: {fileID: 0}
+    - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
+      propertyPath: clipDisparo
+      value: 
+      objectReference: {fileID: 8300000, guid: 836bb40d7f6498742a80e9f6f2793321, type: 3}
     - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
       propertyPath: ParticulasDisparo
       value: 

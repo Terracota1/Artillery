@@ -5,6 +5,11 @@ using UnityEngine;
 public class Canon : MonoBehaviour
 {
     public static bool Bloqueado;
+
+    public AudioClip clipDisparo;
+    private GameObject SonidoDisparo;
+    private AudioSource SourceDisparo;
+
     [SerializeField] private GameObject BalaPrefab;
     public GameObject ParticulasDisparo;
     private GameObject puntaCanon;
@@ -13,6 +18,8 @@ public class Canon : MonoBehaviour
     void Start()
     {
         puntaCanon = transform.Find("PuntaCanon").gameObject;
+        SonidoDisparo = GameObject.Find("SonidoDisparo");
+        SourceDisparo = SonidoDisparo.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -39,6 +46,7 @@ public class Canon : MonoBehaviour
                 GameObject Particulas = Instantiate(ParticulasDisparo, puntaCanon.transform.position, transform.rotation);
                 tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
                 AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
+                SourceDisparo.PlayOneShot(clipDisparo);
                 Bloqueado = true;
             }
         }
