@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AdministradorJuego : MonoBehaviour
 {
+    public GameObject CanvasGanar;
+    public GameObject CanvasPerder;
+
     public static AdministradorJuego SingletonAdministradorJuego;
     [SerializeField] int VelocidadBala = 30;
     public int _VelocidadBala_Get { get => VelocidadBala; }
@@ -25,17 +28,29 @@ public class AdministradorJuego : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
 
-        //DisparosRestantes = DisparosPorJuego;
     }
-
-    //public int GetDisparosRestantes()
-    //{
-    //    return DisparosRestantes;
-    //}
 
     public void ReducirDisparosRestantes()
     {
         DisparosPorJuego--;
+    }
+
+    private void Update()
+    {
+        if (DisparosPorJuego < 0)
+        {
+            PerderJuego();
+        }
+    }
+
+    public void GanarJuego()
+    {
+        CanvasGanar.SetActive(true);
+    }
+
+    public void PerderJuego()
+    {
+        CanvasPerder.SetActive(true);
     }
 }
 
