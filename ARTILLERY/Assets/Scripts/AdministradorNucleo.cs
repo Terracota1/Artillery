@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AdministradorNucleo : MonoBehaviour
 {
+    public UnityEvent GameWon;
     public GameObject Menu_Fin_Nivel;
 
-    public int resistencia = 1;
-
-    void Update()
+    private void OnTriggereEnter(Collider other)
     {
-        if (resistencia <= 0)
+        if (other.tag == "Explosion")
         {
+            GameWon.Invoke();
             Destroy(this.gameObject);
-            Menu_Fin_Nivel.SetActive(true);
+            //Menu_Fin_Nivel.SetActive(true);
         }
     }
 }
