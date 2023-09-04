@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class AdministradorNucleo : MonoBehaviour
 {
     public UnityEvent GameWon;
-    public GameObject Menu_Fin_Nivel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +13,6 @@ public class AdministradorNucleo : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameWon.Invoke();
-            //Menu_Fin_Nivel.SetActive(true);
         }
     }
 }
