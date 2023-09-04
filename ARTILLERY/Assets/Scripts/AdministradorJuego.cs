@@ -6,12 +6,13 @@ public class AdministradorJuego : MonoBehaviour
 {
     public GameObject CanvasGanar;
     public GameObject CanvasPerder;
+    public bool juegoGanado = false;
 
     public static AdministradorJuego SingletonAdministradorJuego;
     [SerializeField] int VelocidadBala = 30;
     public int _VelocidadBala_Get { get => VelocidadBala; }
 
-    [SerializeField] int DisparosPorJuego = 10;
+    [SerializeField] int DisparosPorJuego = 3;
     public int _DisparosRestantes_Get { get => DisparosPorJuego; }
 
     [SerializeField] float VelocidadRotacion = 1;
@@ -37,14 +38,16 @@ public class AdministradorJuego : MonoBehaviour
 
     private void Update()
     {
-        if (DisparosPorJuego < 0)
+        if (DisparosPorJuego <= 0)
         {
             PerderJuego();
         }
+
     }
 
     public void GanarJuego()
     {
+        juegoGanado = true;
         CanvasGanar.SetActive(true);
     }
 
