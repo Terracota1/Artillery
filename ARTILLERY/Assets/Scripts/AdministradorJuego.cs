@@ -12,7 +12,7 @@ public class AdministradorJuego : MonoBehaviour
     [SerializeField] int VelocidadBala = 30;
     public int _VelocidadBala_Get { get => VelocidadBala; }
 
-    [SerializeField] int DisparosPorJuego = 3;
+    [SerializeField] int DisparosPorJuego = 5;
     public int _DisparosRestantes_Get { get => DisparosPorJuego; }
 
     [SerializeField] float VelocidadRotacion = 1;
