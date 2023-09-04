@@ -34678,8 +34678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGanar: {fileID: 1565075877}
   CanvasPerder: {fileID: 1872124878}
+  juegoGanado: 0
   VelocidadBala: 30
-  DisparosPorJuego: 10
+  DisparosPorJuego: 3
   VelocidadRotacion: 1
 --- !u!1 &996868605
 GameObject:
@@ -82189,18 +82190,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1729398750, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 992284952}
+    - target: {fileID: 3691988375323320577, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3691988375520759656, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
       propertyPath: m_Name
       value: AdminNucleo
       objectReference: {fileID: 0}
-    - target: {fileID: 3691988375520759657, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
-      propertyPath: Menu_Fin_Nivel
-      value: 
-      objectReference: {fileID: 1505927225}
-    - target: {fileID: 3691988375520759657, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
-      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 992284952}
     - target: {fileID: 3691988375520759669, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -82285,6 +82286,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5026794277928097708, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: m_Constraints
+      value: 72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
 --- !u!1001 &8411661606130416740
@@ -82342,6 +82347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanonJugador
       objectReference: {fileID: 0}
+    - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
+      propertyPath: BalaPrefab
+      value: 
+      objectReference: {fileID: 3309657984160027619, guid: 7eae3576a602ff642b8bded70f610816, type: 3}
     - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
       propertyPath: clipDisparo
       value: 
