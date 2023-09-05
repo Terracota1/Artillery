@@ -37,6 +37,11 @@ public class Canon : MonoBehaviour
         disparar.performed += Disparar;
     }
 
+    private void OnDisable()
+    {
+        disparar.performed -= Disparar;
+    }
+
     void Start()
     {
         puntaCanon = transform.Find("PuntaCanon").gameObject;
@@ -67,7 +72,6 @@ public class Canon : MonoBehaviour
             direccionDisparo.y = 90 - direccionDisparo.x;
             Vector3 direccionParticulas = new Vector3(-90 + direccionDisparo.x, 90, 0);
             GameObject Particulas = Instantiate(ParticulasDisparo, puntaCanon.transform.position, transform.rotation);
-            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
             AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
             SourceDisparo.PlayOneShot(clipDisparo);
             Bloqueado = true;

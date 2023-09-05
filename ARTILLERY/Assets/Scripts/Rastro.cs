@@ -89,4 +89,43 @@ public class Rastro : MonoBehaviour
             objetivoLinea = null;
         }
     }
+
+    //private void FixedUpdate()
+    //{
+    //    if (_objetivoLinea == null)
+    //    {
+    //        if (SeguirCamara.objetivo == null)
+    //        {
+    //            if (SeguirCamara.objetivo.tag == "Bala")
+    //            {
+    //                objetivoLinea = SeguirCamara.objetivo;
+    //            }
+    //            else
+    //            {
+    //                return;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            if (SeguirCamara.objetivo.tag == "Bala")
+    //            {
+    //                AgregarPunto();
+    //            }
+    //        }
+    //    }
+
+    //}
+
+    // private void FixedUpdate()
+    //{
+        //    if (_objetivoLinea == null)
+        //    if (SeguirCamara.objetivo == null)
+        //    else
+        //    {
+        //      if (SeguirCamara.objetivo.tag == "Bala")
+        //      {
+        //          AgregarPunto()
+        //      }
+        //    }
+    //}
 }
