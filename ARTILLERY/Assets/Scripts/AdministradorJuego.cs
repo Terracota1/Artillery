@@ -9,8 +9,14 @@ public class AdministradorJuego : MonoBehaviour
     public bool juegoGanado = false;
 
     public static AdministradorJuego SingletonAdministradorJuego;
-    [SerializeField] int VelocidadBala = 30;
-    public int _VelocidadBala_Get { get => VelocidadBala; }
+
+    [SerializeField] float velocidadBala = 1f;
+    public float VelocidadBala
+    {
+        get { return velocidadBala; }
+        set { velocidadBala = value; }
+    }
+    public float _VelocidadBala_Get { get => velocidadBala; }
 
     [SerializeField] int DisparosPorJuego = 5;
     public int _DisparosRestantes_Get { get => DisparosPorJuego; }
@@ -34,6 +40,11 @@ public class AdministradorJuego : MonoBehaviour
     public void ReducirDisparosRestantes()
     {
         DisparosPorJuego--;
+    }
+
+    public void SetVelocidadBala(float nuevaVelocidad)
+    {
+        velocidadBala = nuevaVelocidad;
     }
 
     private void Update()

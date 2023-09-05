@@ -18,9 +18,19 @@ public class Bala : MonoBehaviour
     public void Explotar()
     {
         GameObject particulas = Instantiate(particulasExplosion, transform.position, Quaternion.identity) as GameObject;
+
+        this.GetComponent<MeshRenderer>().enabled = false;
+        this.GetComponent<Collider>().enabled = false;
+        var particulaSystem = particulas.GetComponent<ParticleSystem>();
+        SeguirCamara.objetivo = particulas;
+        Invoke("_DespuesDeExplosion", (particulaSystem.main.startLifetime.constant + particulaSystem.main.duration - 0.02f));
+    }
+
+    void _DespuesDeExplosion()
+    {
+
         Canon.Bloqueado = false;
         SeguirCamara.objetivo = null;
         Destroy(this.gameObject);
     }
-
 }
