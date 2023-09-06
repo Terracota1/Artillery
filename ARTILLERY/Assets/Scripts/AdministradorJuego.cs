@@ -11,11 +11,6 @@ public class AdministradorJuego : MonoBehaviour
     public static AdministradorJuego SingletonAdministradorJuego;
 
     [SerializeField] float velocidadBala = 1f;
-    public float VelocidadBala
-    {
-        get { return velocidadBala; }
-        set { velocidadBala = value; }
-    }
     public float _VelocidadBala_Get { get => velocidadBala; }
 
     [SerializeField] int DisparosPorJuego = 5;
@@ -42,9 +37,15 @@ public class AdministradorJuego : MonoBehaviour
         DisparosPorJuego--;
     }
 
-    public void SetVelocidadBala(float nuevaVelocidad)
+    public void CambiarVelocidad(float nuevaVelocidad)
     {
         velocidadBala = nuevaVelocidad;
+
+        Bala Bala = FindObjectOfType<Bala>();
+        if (Bala != null)
+        {
+            AdministradorJuego.SingletonAdministradorJuego.velocidadBala = nuevaVelocidad;
+        }
     }
 
     private void Update()
