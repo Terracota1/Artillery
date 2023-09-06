@@ -6,22 +6,15 @@ public class ControlSlider : MonoBehaviour
     public Slider sliderFuerza;
     public AdministradorJuego administradorJuego;
 
-    private void Start()
+    public void Start()
     {
-        sliderFuerza.onValueChanged.AddListener(ActualizarFuerzaCanon);
+        sliderFuerza = GetComponent<Slider>();
+        sliderFuerza.onValueChanged.AddListener(delegate { ControlarCambios(); });
     }
 
-    private void ActualizarFuerzaCanon(float valor)
+    public void ControlarCambios()
     {
-        if (administradorJuego != null)
-        {
-            float velocidadMinima = 1f;
-            float velocidadMaxima = 10f;
-
-            float velocidadBala = Mathf.Lerp(velocidadMinima, velocidadMaxima, valor);
-
-            administradorJuego.SetVelocidadBala(velocidadBala);
-        }
+        AdministradorJuego.SingletonAdministradorJuego.CambiarVelocidad(sliderFuerza.value);
     }
 }
 
