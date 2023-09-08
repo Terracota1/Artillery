@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Canon : MonoBehaviour
 {
     public static bool Bloqueado;
+    private float velocidadBalaActual;
+    public Slider sliderFuerza;
 
     public AudioClip clipDisparo;
     private GameObject SonidoDisparo;
@@ -15,6 +19,7 @@ public class Canon : MonoBehaviour
     public GameObject ParticulasDisparo;
     private GameObject puntaCanon;
     private float rotacion;
+    public float velocidad;
 
     public CanonControls canonControls;
     private InputAction apuntar;
@@ -47,6 +52,12 @@ public class Canon : MonoBehaviour
         puntaCanon = transform.Find("PuntaCanon").gameObject;
         SonidoDisparo = GameObject.Find("SonidoDisparo");
         SourceDisparo = SonidoDisparo.GetComponent<AudioSource>();
+
+        ControlSlider controlSlider = FindObjectOfType<ControlSlider>();
+        if (controlSlider != null)
+        {
+            sliderFuerza = controlSlider.sliderFuerza;
+        }
     }
 
     void Update()
@@ -59,6 +70,8 @@ public class Canon : MonoBehaviour
 
         if (rotacion > 90) rotacion = 90;
         if (rotacion < 0) rotacion = 0;
+
+        velocidadBalaActual = sliderFuerza.value * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
     }
 
     private void Disparar(InputAction.CallbackContext context)
@@ -75,7 +88,7 @@ public class Canon : MonoBehaviour
             AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
             SourceDisparo.PlayOneShot(clipDisparo);
             Bloqueado = true;
-            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
+            tempRB.velocity = direccionDisparo.normalized * velocidadBalaActual;
         }
     }
 }

@@ -6454,6 +6454,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &872757464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 159865826, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+  m_PrefabInstance: {fileID: 3691988375856361700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &881491194
 Mesh:
   m_ObjectHideFlags: 0
@@ -20303,6 +20314,10 @@ PrefabInstance:
       propertyPath: clipDisparo
       value: 
       objectReference: {fileID: 8300000, guid: 836bb40d7f6498742a80e9f6f2793321, type: 3}
+    - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
+      propertyPath: sliderFuerza
+      value: 
+      objectReference: {fileID: 872757464}
     - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
       propertyPath: ParticulasDisparo
       value: 

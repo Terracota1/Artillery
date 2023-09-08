@@ -51,7 +51,7 @@ public class AdministradorJuego : MonoBehaviour
 
     private void Update()
     {
-        if (DisparosPorJuego <= 0)
+        if (DisparosPorJuego <= 0 && nucleoDestruido == false)
         {
             PerderJuego();
         }
@@ -65,7 +65,7 @@ public class AdministradorJuego : MonoBehaviour
 
     public void GanarJuego()
     {
-        if (Canon.Bloqueado == false && CanvasPerder.activeSelf == false)
+        if (Canon.Bloqueado == false && CanvasPerder.activeSelf == false && nucleoDestruido == true)
         {
             juegoGanado = true;
             CanvasGanar.SetActive(true);
@@ -74,7 +74,7 @@ public class AdministradorJuego : MonoBehaviour
 
     public void PerderJuego()
     {
-        if (Canon.Bloqueado == false && CanvasGanar.activeSelf == false)
+        if (Canon.Bloqueado == false && CanvasGanar.activeSelf == false && nucleoDestruido == false)
         {
             CanvasPerder.SetActive(true);
         }
