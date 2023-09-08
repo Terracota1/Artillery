@@ -9,6 +9,7 @@ TagManager:
   - Obstaculo
   - Enemigo
   - Explosion
+  - Objetivo
   layers:
   - Default
   - TransparentFX

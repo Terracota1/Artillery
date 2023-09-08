@@ -75,7 +75,7 @@ public class Canon : MonoBehaviour
             AdministradorJuego.SingletonAdministradorJuego.ReducirDisparosRestantes();
             SourceDisparo.PlayOneShot(clipDisparo);
             Bloqueado = true;
-            tempRB.velocity = temp.transform.forward * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
+            tempRB.velocity = direccionDisparo.normalized * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
         }
     }
 }
