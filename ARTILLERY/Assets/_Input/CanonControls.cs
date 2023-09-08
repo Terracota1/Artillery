@@ -185,7 +185,7 @@ public class @CanonControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""positive"",
                     ""id"": ""039333f1-cdba-40af-8a45-45c7cb697f81"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
@@ -196,7 +196,7 @@ public class @CanonControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""negative"",
                     ""id"": ""f0adf8cc-80a5-4438-8e5d-f347159f2bc3"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
