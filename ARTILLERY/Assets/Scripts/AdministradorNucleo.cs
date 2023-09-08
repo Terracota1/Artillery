@@ -20,6 +20,7 @@ public class AdministradorNucleo : MonoBehaviour
         if (other.tag == "Explosion" || other.tag == "Bala")
         {
             Destroy(this.gameObject);
+            AdministradorJuego.SingletonAdministradorJuego.Nucleo_Destruido();
             GameWon.Invoke();
         }
     }

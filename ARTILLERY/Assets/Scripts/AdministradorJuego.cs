@@ -7,6 +7,7 @@ public class AdministradorJuego : MonoBehaviour
     public GameObject CanvasGanar;
     public GameObject CanvasPerder;
     public bool juegoGanado = false;
+    private bool nucleoDestruido = false;
 
     public static AdministradorJuego SingletonAdministradorJuego;
 
@@ -55,17 +56,33 @@ public class AdministradorJuego : MonoBehaviour
             PerderJuego();
         }
 
+        if (nucleoDestruido)
+        {
+            GanarJuego();
+        }
+
     }
 
     public void GanarJuego()
     {
-        juegoGanado = true;
-        CanvasGanar.SetActive(true);
+        if (Canon.Bloqueado == false && CanvasPerder.activeSelf == false)
+        {
+            juegoGanado = true;
+            CanvasGanar.SetActive(true);
+        }
     }
 
     public void PerderJuego()
     {
-        CanvasPerder.SetActive(true);
+        if (Canon.Bloqueado == false && CanvasGanar.activeSelf == false)
+        {
+            CanvasPerder.SetActive(true);
+        }
+    }
+
+    public void Nucleo_Destruido()
+    {
+        nucleoDestruido = true;
     }
 }
 
