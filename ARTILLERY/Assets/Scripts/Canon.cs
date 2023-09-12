@@ -9,7 +9,6 @@ public class Canon : MonoBehaviour
 {
     public static bool Bloqueado;
     private float velocidadBalaActual;
-    public Slider sliderFuerza;
 
     public AudioClip clipDisparo;
     private GameObject SonidoDisparo;
@@ -19,12 +18,13 @@ public class Canon : MonoBehaviour
     public GameObject ParticulasDisparo;
     private GameObject puntaCanon;
     private float rotacion;
-    public float velocidad;
 
     public CanonControls canonControls;
     private InputAction apuntar;
     private InputAction modificarFuerza;
     private InputAction disparar;
+
+    [SerializeField] private ControlSlider controlSlider;
 
     private void Awake()
     {
@@ -53,11 +53,7 @@ public class Canon : MonoBehaviour
         SonidoDisparo = GameObject.Find("SonidoDisparo");
         SourceDisparo = SonidoDisparo.GetComponent<AudioSource>();
 
-        ControlSlider controlSlider = FindObjectOfType<ControlSlider>();
-        if (controlSlider != null)
-        {
-            sliderFuerza = controlSlider.sliderFuerza;
-        }
+        controlSlider = FindObjectOfType<ControlSlider>();
     }
 
     void Update()
@@ -71,7 +67,7 @@ public class Canon : MonoBehaviour
         if (rotacion > 90) rotacion = 90;
         if (rotacion < 0) rotacion = 0;
 
-        velocidadBalaActual = sliderFuerza.value * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
+        velocidadBalaActual = controlSlider.sliderFuerza.value * AdministradorJuego.SingletonAdministradorJuego._VelocidadBala_Get;
     }
 
     private void Disparar(InputAction.CallbackContext context)
