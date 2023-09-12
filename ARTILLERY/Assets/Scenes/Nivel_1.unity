@@ -10196,6 +10196,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1206023748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 159865825, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+  m_PrefabInstance: {fileID: 3691988375856361700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcf15c9e4c1d834aa90687178572e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1220959528
 Mesh:
   m_ObjectHideFlags: 0
@@ -20138,6 +20149,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 992284952}
     - target: {fileID: 159865826, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159865826, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 159865826, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
+      propertyPath: m_MinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159865826, guid: 674a1f95f578bb24292fb57c4de8b892, type: 3}
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
@@ -20318,6 +20341,10 @@ PrefabInstance:
       propertyPath: sliderFuerza
       value: 
       objectReference: {fileID: 872757464}
+    - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
+      propertyPath: controlSlider
+      value: 
+      objectReference: {fileID: 1206023748}
     - target: {fileID: 8411661604544196800, guid: 05898b0b8183a64479eab601caa71e87, type: 3}
       propertyPath: ParticulasDisparo
       value: 
