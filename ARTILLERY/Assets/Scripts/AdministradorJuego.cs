@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class AdministradorJuego : MonoBehaviour
 {
@@ -21,8 +19,6 @@ public class AdministradorJuego : MonoBehaviour
     [SerializeField] float VelocidadRotacion = 1;
     public float _VelocidadRotacion_Get { get => VelocidadRotacion; }
 
-    private int enemigosDestruidos = 0;
-
     private void Awake()
     {
         if (SingletonAdministradorJuego == null)
@@ -33,6 +29,7 @@ public class AdministradorJuego : MonoBehaviour
         {
             Debug.LogError("Ya existe una instancia de esta clase");
         }
+
     }
 
     public void ReducirDisparosRestantes()
@@ -58,10 +55,11 @@ public class AdministradorJuego : MonoBehaviour
             PerderJuego();
         }
 
-        if (nucleoDestruido && enemigosDestruidos == 4)
+        if (nucleoDestruido)
         {
             GanarJuego();
         }
+
     }
 
     public void GanarJuego()
@@ -84,15 +82,5 @@ public class AdministradorJuego : MonoBehaviour
     public void Nucleo_Destruido()
     {
         nucleoDestruido = true;
-    }
-
-    public void EnemigoDestruido()
-    {
-        enemigosDestruidos++;
-    }
-
-    public int _EnemigosDestruidos_Get()
-    {
-        return enemigosDestruidos;
     }
 }
