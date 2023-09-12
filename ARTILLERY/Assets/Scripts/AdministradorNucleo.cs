@@ -7,6 +7,8 @@ public class AdministradorNucleo : MonoBehaviour
 {
     public UnityEvent GameWon;
 
+    private int Enemigos_Que_Se_Necesitan_Destruir = 4;
+
     private void FixedUpdate()
     {
         if (AdministradorJuego.SingletonAdministradorJuego.juegoGanado)
@@ -21,7 +23,15 @@ public class AdministradorNucleo : MonoBehaviour
         {
             Destroy(this.gameObject);
             AdministradorJuego.SingletonAdministradorJuego.Nucleo_Destruido();
-            GameWon.Invoke();
+            AdministradorJuego.SingletonAdministradorJuego.EnemigoDestruido(); 
+            int enemigosDestruidos = AdministradorJuego.SingletonAdministradorJuego._EnemigosDestruidos_Get(); 
+
+            if (enemigosDestruidos == Enemigos_Que_Se_Necesitan_Destruir)
+            {
+                GameWon.Invoke();
+            }
         }
     }
 }
+
+

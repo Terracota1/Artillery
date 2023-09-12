@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AdministradorJuego : MonoBehaviour
 {
@@ -14,11 +15,13 @@ public class AdministradorJuego : MonoBehaviour
     [SerializeField] float velocidadBala = 1f;
     public float _VelocidadBala_Get { get => velocidadBala; }
 
-    [SerializeField] int DisparosPorJuego = 5;
+    [SerializeField] int DisparosPorJuego = 10;
     public int _DisparosRestantes_Get { get => DisparosPorJuego; }
 
     [SerializeField] float VelocidadRotacion = 1;
     public float _VelocidadRotacion_Get { get => VelocidadRotacion; }
+
+    private int enemigosDestruidos = 0;
 
     private void Awake()
     {
@@ -30,7 +33,6 @@ public class AdministradorJuego : MonoBehaviour
         {
             Debug.LogError("Ya existe una instancia de esta clase");
         }
-
     }
 
     public void ReducirDisparosRestantes()
@@ -56,11 +58,10 @@ public class AdministradorJuego : MonoBehaviour
             PerderJuego();
         }
 
-        if (nucleoDestruido)
+        if (nucleoDestruido && enemigosDestruidos == 4)
         {
             GanarJuego();
         }
-
     }
 
     public void GanarJuego()
@@ -84,5 +85,14 @@ public class AdministradorJuego : MonoBehaviour
     {
         nucleoDestruido = true;
     }
-}
 
+    public void EnemigoDestruido()
+    {
+        enemigosDestruidos++;
+    }
+
+    public int _EnemigosDestruidos_Get()
+    {
+        return enemigosDestruidos;
+    }
+}
