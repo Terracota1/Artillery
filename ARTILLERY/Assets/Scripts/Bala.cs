@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
+    /**
+    * __particulasExplosion__ : _Particulas cuando pasa la explosion_
+    */
     public GameObject particulasExplosion;
 
+    /**
+    * Funcion en donde se detecta cuando la Bala colisiona
+    */
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Suelo")
@@ -15,6 +21,9 @@ public class Bala : MonoBehaviour
         if (collision.gameObject.tag == "Obstaculo" || collision.gameObject.tag == "Objetivo") Explotar();
     }
 
+    /**
+    * Funcion en donde la Bala explota
+    */
     public void Explotar()
     {
         GameObject particulas = Instantiate(particulasExplosion, transform.position, Quaternion.identity) as GameObject;
@@ -26,6 +35,9 @@ public class Bala : MonoBehaviour
         Invoke("_DespuesDeExplosion", (particulaSystem.main.startLifetime.constant + particulaSystem.main.duration - 0.02f));
     }
 
+    /**
+    * Funcion en donde se dan unos parametros una vez que pasa la explosion
+    */
     void _DespuesDeExplosion()
     {
 
