@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Obstaculo : MonoBehaviour
 {
+    /**
+    * Funcion para eliminar el obstaculo
+    */
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Explosion") Destroy(this.gameObject);
